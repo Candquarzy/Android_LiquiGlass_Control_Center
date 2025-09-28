@@ -26,9 +26,11 @@ fun LiquiGlass(
 	re_height: Float = 24f,
 	re_amount: Float = 48f,
 	size_width: Dp,
-	size_height:Dp,
+	size_height: Dp,
 	hasDepthEffect:  Boolean = true,
-	onDrawSurface: (DrawScope.() -> Unit)? = { drawRect(Color.White.copy(alpha = 0.3f)) },
+	onDrawSurface: (DrawScope.() -> Unit)? = {
+		drawRect(Color.White.copy(alpha = 0.3f))
+	},
 	content: (@Composable () -> Unit)? = null
 )
 {
@@ -45,7 +47,7 @@ fun LiquiGlass(
 					refraction(
 						re_height,
 						re_amount,
-						hasDepthEffect
+						hasDepthEffect = hasDepthEffect
 					)
 				},
 				onDrawSurface = onDrawSurface,

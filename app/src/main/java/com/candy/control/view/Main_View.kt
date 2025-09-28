@@ -5,7 +5,9 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -44,7 +46,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.candy.control.Bar
+import com.candy.control.Big_Tile
+import com.candy.control.Device_Center
+import com.candy.control.Music_Player
 import com.candy.control.R
+import com.candy.control.Small_Tile
+import com.candy.control.data_class.Std_List
 import com.candy.control.unit.LiquiGlass
 import com.kyant.backdrop.backdrops.layerBackdrop
 import com.kyant.backdrop.backdrops.rememberLayerBackdrop
@@ -89,65 +97,18 @@ fun Main_View()
 					modifier = Modifier.fillMaxWidth()
 				)
 				{
-					LiquiGlass( //wifi
+					Big_Tile( //wifi
 						backdrop = backdrop,
-						Rounded = 64f,
-						blur = 64f,
-						size_width = 160f.dp,
-						size_height = 80f.dp
+						icon = Icons.Rounded.Wifi,
+						text = "WIFI",
+						padding = 10.dp
 					)
-					{
-						Row(
-							verticalAlignment = Alignment.CenterVertically,
-							horizontalArrangement = Arrangement.Center,
-							modifier = Modifier.fillMaxSize()
-						)
-						{
-							Icon(
-								imageVector = Icons.Rounded.Wifi,
-								contentDescription = "wifi",
-								tint = Color.White,
-								modifier = Modifier.size(36.dp)
-							)
-							Text(
-								text = "WIFI",
-								color = Color.White,
-								fontWeight = FontWeight.SemiBold,
-								fontSize = 16.sp,
-								modifier = Modifier.padding(start = 16.dp)
-							)
-						}
-					}
-
-					LiquiGlass( //internet
+					Big_Tile( //internet
 						backdrop = backdrop,
-						Rounded = 64f,
-						blur = 64f,
-						size_width = 160f.dp,
-						size_height = 80f.dp
+						icon = Icons.Rounded.SwapVert,
+						text = "蜂窝网络",
+						padding = 8.dp
 					)
-					{
-						Row(
-							verticalAlignment = Alignment.CenterVertically,
-							horizontalArrangement = Arrangement.Center,
-							modifier = Modifier.fillMaxSize()
-						)
-						{
-							Icon(
-								imageVector = Icons.Rounded.SwapVert,
-								contentDescription = "internet",
-								tint = Color.White,
-								modifier = Modifier.size(36.dp)
-							)
-							Text(
-								text = "蜂窝网络",
-								color = Color.White,
-								fontWeight = FontWeight.SemiBold,
-								fontSize = 16.sp,
-								modifier = Modifier.padding(start = 8.dp)
-							)
-						}
-					}
 				}
 
 				Row( //two row bluetouch and light
@@ -156,65 +117,18 @@ fun Main_View()
 						.padding(vertical = 16.dp)
 				)
 				{
-					LiquiGlass( //bluetoch
+					Big_Tile( //bluetouch
 						backdrop = backdrop,
-						Rounded = 64f,
-						blur = 64f,
-						size_width = 160f.dp,
-						size_height = 80f.dp
+						icon = Icons.Rounded.Bluetooth,
+						text = "蓝牙",
+						padding = 8.dp
 					)
-					{
-						Row(
-							verticalAlignment = Alignment.CenterVertically,
-							horizontalArrangement = Arrangement.Center,
-							modifier = Modifier.fillMaxSize()
-						)
-						{
-							Icon(
-								imageVector = Icons.Rounded.Bluetooth,
-								contentDescription = "bluetooth",
-								tint = Color.White,
-								modifier = Modifier.size(36.dp)
-							)
-							Text(
-								text = "蓝牙",
-								color = Color.White,
-								fontWeight = FontWeight.SemiBold,
-								fontSize = 16.sp,
-								modifier = Modifier.padding(start = 8.dp)
-							)
-						}
-					}
-
-					LiquiGlass( //light
+					Big_Tile( //light
 						backdrop = backdrop,
-						Rounded = 64f,
-						blur = 64f,
-						size_width = 160f.dp,
-						size_height = 80f.dp
+						icon = Icons.Rounded.FlashlightOn,
+						text = "手电筒",
+						padding = 16.dp
 					)
-					{
-						Row(
-							verticalAlignment = Alignment.CenterVertically,
-							horizontalArrangement = Arrangement.Center,
-							modifier = Modifier.fillMaxSize()
-						)
-						{
-							Icon(
-								imageVector = Icons.Rounded.FlashlightOn,
-								contentDescription = "flashlight",
-								tint = Color.White,
-								modifier = Modifier.size(36.dp)
-							)
-							Text(
-								text = "手电筒",
-								color = Color.White,
-								fontWeight = FontWeight.SemiBold,
-								fontSize = 16.sp,
-								modifier = Modifier.padding(start = 16.dp)
-							)
-						}
-					}
 				}
 
 				Row( //three row crash and settings
@@ -222,225 +136,67 @@ fun Main_View()
 					modifier = Modifier.fillMaxWidth()
 				)
 				{
-					LiquiGlass( //crash
+					Big_Tile( //crash
 						backdrop = backdrop,
-						Rounded = 64f,
-						blur = 64f,
-						size_width = 160f.dp,
-						size_height = 80f.dp
+						icon = Icons.Rounded.Pets,
+						text = "Clash",
+						padding = 8.dp
 					)
-					{
-						Row(
-							verticalAlignment = Alignment.CenterVertically,
-							horizontalArrangement = Arrangement.Center,
-							modifier = Modifier.fillMaxSize()
-						)
-						{
-							Icon(
-								imageVector = Icons.Rounded.Pets,
-								contentDescription = "crash",
-								tint = Color.White,
-								modifier = Modifier.size(36.dp)
-							)
-							Text(
-								text = "Clash",
-								color = Color.White,
-								fontWeight = FontWeight.SemiBold,
-								fontSize = 16.sp,
-								modifier = Modifier.padding(start = 8.dp)
-							)
-						}
-					}
-
-					LiquiGlass( //settings
+					Big_Tile( //settings
 						backdrop = backdrop,
-						Rounded = 64f,
-						blur = 64f,
-						size_width = 160f.dp,
-						size_height = 80f.dp
+						icon = Icons.Rounded.Settings,
+						text = "设置",
+						padding = 16.dp
 					)
-					{
-						Row(
-							verticalAlignment = Alignment.CenterVertically,
-							horizontalArrangement = Arrangement.Center,
-							modifier = Modifier.fillMaxSize()
-						)
-						{
-							Icon(
-								imageVector = Icons.Rounded.Settings,
-								contentDescription = "settings",
-								tint = Color.White,
-								modifier = Modifier.size(36.dp)
-							)
-							Text(
-								text = "设置",
-								color = Color.White,
-								fontWeight = FontWeight.SemiBold,
-								fontSize = 16.sp,
-								modifier = Modifier.padding(start = 24.dp)
-							)
-						}
-					}
 				}
 
 				Row( //music player and volume/light bar
 					horizontalArrangement = Arrangement.SpaceBetween,
 					verticalAlignment = Alignment.CenterVertically,
 					modifier = Modifier.fillMaxWidth()
-						.padding(top = 24.dp, bottom = 16.dp)
+						.padding(top = 24.dp, bottom = 24.dp)
 				)
 				{
-					LiquiGlass( //music player
-						backdrop = backdrop,
-						Rounded = 32f,
-						blur = 8f,
-						size_width = 160f.dp,
-						size_height = 160f.dp,
-						modifier = Modifier.padding(start = 8.dp)
-					)
-					{
-						Column(
-							verticalArrangement = Arrangement.SpaceEvenly,
-							modifier = Modifier.fillMaxSize()
-								.padding(horizontal = 16.dp, vertical = 12.dp)
-						)
-						{
-							Row(
-								verticalAlignment = Alignment.CenterVertically
-							)
-							{
-								Image(
-									painter = painterResource(R.drawable.azalea),
-									contentDescription = "music pic",
-									modifier = Modifier.size(36.dp)
-										.clip(RoundedCornerShape(4.dp))
-								)
-								Column(
-									modifier = Modifier.fillMaxWidth()
-								)
-								{
-									Icon(
-										imageVector = Icons.Rounded.Airplay,
-										contentDescription = "airplay",
-										tint = Color.White,
-										modifier = Modifier.align(Alignment.End)
-											.padding(end = 4.dp)
-											.size(20.dp)
-									)
-								}
-							}
-
-							Row( //music name and aother
-
-							)
-							{
-								Column(
-									modifier = Modifier.padding(vertical = 8.dp)
-								)
-								{
-									Text(
-										text = "Azalea",
-										color = Color.White,
-										fontWeight = FontWeight.Bold,
-										fontSize = 20.sp,
-										modifier = Modifier.padding(bottom = 4.dp)
-									)
-									Text(
-										text = "米津玄師",
-										color = Color.White,
-										fontWeight = FontWeight.SemiBold,
-										fontSize = 12.sp
-									)
-								}
-							}
-
-							Row( //music control
-								horizontalArrangement = Arrangement.SpaceEvenly,
-								modifier = Modifier.fillMaxWidth()
-							)
-							{
-								Icon(
-									imageVector = Icons.Rounded.SkipPrevious,
-									contentDescription = "previous",
-									tint = Color.White,
-									modifier = Modifier.size(30.dp)
-								)
-								Icon(
-									imageVector = Icons.Rounded.Pause,
-									contentDescription = "pause",
-									tint = Color.White,
-									modifier = Modifier.size(30.dp)
-								)
-								Icon(
-									imageVector = Icons.Rounded.SkipNext,
-									contentDescription = "next",
-									tint = Color.White,
-									modifier = Modifier.size(30.dp)
-								)
-							}
-						}
-					}
+					Music_Player(backdrop)
 
 					Column(
-						modifier = Modifier.padding(horizontal = 16.dp)
+						modifier = Modifier.padding(start = 4.dp, end = 8.dp)
 							.size(160f.dp, 160f.dp)
 					)
 					{
-						Row(
-							horizontalArrangement = Arrangement.SpaceAround,
+						Row( //bar
+							horizontalArrangement = Arrangement.SpaceEvenly,
 							modifier = Modifier.fillMaxWidth()
-								.padding(start = 8.dp)
 						)
 						{
-							LiquiGlass( //light bar
-								backdrop = backdrop,
-								Rounded = 32f,
-								blur = 8f,
-								size_width = 60f.dp,
-								size_height = 160f.dp
-							)
-							{
-
-							}
-							LiquiGlass( //volume bar
-								backdrop = backdrop,
-								Rounded = 32f,
-								blur = 8f,
-								size_width = 60f.dp,
-								size_height = 160f.dp
-							)
-							{
-
-							}
+							Bar(backdrop)
+							Bar(backdrop)
 						}
 					}
 				}
+
+				Device_Center(backdrop)
+
+				FlowRow(
+					maxItemsInEachRow = 4,
+					horizontalArrangement = Arrangement.SpaceAround,
+					verticalArrangement = Arrangement.spacedBy(16.dp),
+					modifier = Modifier.fillMaxWidth()
+//						.padding(horizontal = 16.dp)
+				)
+				{
+					Std_List.forEachIndexed { index, data ->
+						Small_Tile(
+							backdrop = backdrop,
+							Std_List[index]
+						)
+					}
+				}
+
+				Spacer(
+					modifier = Modifier.size(48.dp)
+				)
 			}
-
-
-
-//			Box(
-//				 modifier = Modifier.align(Alignment.Center)
-//					 .size(320f.dp, 180f.dp)
-//					 .drawBackdrop(
-//						 backdrop = backdrop,
-//						 shape = {
-//							 RoundedCornerShape(32f.dp)
-//						 },
-//						 effects = {
-//							 vibrancy()
-//							 blur(16f.dp.toPx())
-//							 refraction(
-//								 height = 24f.dp.toPx(),
-//								 amount = 48f.dp.toPx(),
-//								 hasDepthEffect = true
-//							 )
-//						 },
-//						 onDrawSurface = {
-//							 drawRect(Color.White.copy(alpha = 0.3f))
-//						 }
-//					 )
-//			)
 		}
 	}
 }
