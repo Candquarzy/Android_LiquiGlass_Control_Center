@@ -15,11 +15,16 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Airplay
 import androidx.compose.material.icons.rounded.Bluetooth
 import androidx.compose.material.icons.rounded.Build
 import androidx.compose.material.icons.rounded.FlashlightOn
+import androidx.compose.material.icons.rounded.Newspaper
+import androidx.compose.material.icons.rounded.Pause
 import androidx.compose.material.icons.rounded.Pets
 import androidx.compose.material.icons.rounded.Settings
+import androidx.compose.material.icons.rounded.SkipNext
+import androidx.compose.material.icons.rounded.SkipPrevious
 import androidx.compose.material.icons.rounded.SwapVert
 import androidx.compose.material.icons.rounded.Wifi
 import androidx.compose.material3.Icon
@@ -294,7 +299,86 @@ fun Main_View()
 						modifier = Modifier.padding(start = 8.dp)
 					)
 					{
+						Column(
+							verticalArrangement = Arrangement.SpaceEvenly,
+							modifier = Modifier.fillMaxSize()
+								.padding(horizontal = 16.dp, vertical = 12.dp)
+						)
+						{
+							Row(
+								verticalAlignment = Alignment.CenterVertically
+							)
+							{
+								Image(
+									painter = painterResource(R.drawable.azalea),
+									contentDescription = "music pic",
+									modifier = Modifier.size(36.dp)
+										.clip(RoundedCornerShape(4.dp))
+								)
+								Column(
+									modifier = Modifier.fillMaxWidth()
+								)
+								{
+									Icon(
+										imageVector = Icons.Rounded.Airplay,
+										contentDescription = "airplay",
+										tint = Color.White,
+										modifier = Modifier.align(Alignment.End)
+											.padding(end = 4.dp)
+											.size(20.dp)
+									)
+								}
+							}
 
+							Row( //music name and aother
+
+							)
+							{
+								Column(
+									modifier = Modifier.padding(vertical = 8.dp)
+								)
+								{
+									Text(
+										text = "Azalea",
+										color = Color.White,
+										fontWeight = FontWeight.Bold,
+										fontSize = 20.sp,
+										modifier = Modifier.padding(bottom = 4.dp)
+									)
+									Text(
+										text = "米津玄師",
+										color = Color.White,
+										fontWeight = FontWeight.SemiBold,
+										fontSize = 12.sp
+									)
+								}
+							}
+
+							Row( //music control
+								horizontalArrangement = Arrangement.SpaceEvenly,
+								modifier = Modifier.fillMaxWidth()
+							)
+							{
+								Icon(
+									imageVector = Icons.Rounded.SkipPrevious,
+									contentDescription = "previous",
+									tint = Color.White,
+									modifier = Modifier.size(30.dp)
+								)
+								Icon(
+									imageVector = Icons.Rounded.Pause,
+									contentDescription = "pause",
+									tint = Color.White,
+									modifier = Modifier.size(30.dp)
+								)
+								Icon(
+									imageVector = Icons.Rounded.SkipNext,
+									contentDescription = "next",
+									tint = Color.White,
+									modifier = Modifier.size(30.dp)
+								)
+							}
+						}
 					}
 
 					Column(
