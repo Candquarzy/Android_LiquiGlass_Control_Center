@@ -1,24 +1,17 @@
 package com.candy.control
 
-import android.R.attr.text
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Wifi
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.candy.control.data_class.Small_Tile_Data
 import com.candy.control.unit.LiquiGlass
+import com.candy.control.unit.animateTop
 import com.kyant.backdrop.Backdrop
-import com.kyant.backdrop.backdrops.rememberLayerBackdrop
 
 @Composable
 fun Small_Tile(
@@ -31,6 +24,7 @@ fun Small_Tile(
 		size_width = 60.dp,
 		size_height = 60.dp,
 		Rounded = 48f,
+		modifier = Modifier.animateTop()
 	)
 	{
 		Box(

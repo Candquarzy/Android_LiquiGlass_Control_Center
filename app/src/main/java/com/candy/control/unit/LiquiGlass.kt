@@ -1,7 +1,5 @@
 package com.candy.control.unit
 
-import android.graphics.drawable.shapes.Shape
-import android.view.RoundedCorner
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -10,7 +8,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import com.kyant.backdrop.Backdrop
 import com.kyant.backdrop.drawBackdrop
 import com.kyant.backdrop.effects.blur
@@ -34,6 +31,7 @@ fun LiquiGlass(
 	content: (@Composable () -> Unit)? = null
 )
 {
+//	val progressAnimation = remember { Animatable(0f) }
 	Box(
 		modifier = modifier.size(size_width,size_height)
 			.drawBackdrop(
@@ -50,7 +48,7 @@ fun LiquiGlass(
 						hasDepthEffect = hasDepthEffect
 					)
 				},
-				onDrawSurface = onDrawSurface,
+				onDrawSurface = onDrawSurface
 			)
 	)
 	{

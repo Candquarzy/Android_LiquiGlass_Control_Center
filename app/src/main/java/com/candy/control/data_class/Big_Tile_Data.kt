@@ -1,7 +1,10 @@
 package com.candy.control.data_class
 
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.*
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -9,7 +12,9 @@ import androidx.compose.ui.unit.dp
 data class Big_Tile_Data(
 	val icon: ImageVector,
 	val text: String,
-	val padding: Dp = 16.dp
+	val padding: Dp = 16.dp,
+	val color: Color = Color.White,
+	val shape: () -> Shape = { RoundedCornerShape(32f) }
 )
 
 val Btd_List = listOf(
