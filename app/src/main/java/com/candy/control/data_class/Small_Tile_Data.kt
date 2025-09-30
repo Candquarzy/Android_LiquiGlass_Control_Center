@@ -1,34 +1,11 @@
 package com.candy.control.data_class
 
-import android.R.attr.text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.AddLink
-import androidx.compose.material.icons.rounded.AirplanemodeActive
-import androidx.compose.material.icons.rounded.BatterySaver
-import androidx.compose.material.icons.rounded.Bed
-import androidx.compose.material.icons.rounded.BrightnessAuto
-import androidx.compose.material.icons.rounded.Contrast
-import androidx.compose.material.icons.rounded.GridView
-import androidx.compose.material.icons.rounded.LocationOn
-import androidx.compose.material.icons.rounded.Lock
-import androidx.compose.material.icons.rounded.LockReset
-import androidx.compose.material.icons.rounded.Nfc
-import androidx.compose.material.icons.rounded.NotificationsOff
-import androidx.compose.material.icons.rounded.QrCodeScanner
-import androidx.compose.material.icons.rounded.Screenshot
-import androidx.compose.material.icons.rounded.Search
-import androidx.compose.material.icons.rounded.SurroundSound
-import androidx.compose.material.icons.rounded.Translate
-import androidx.compose.material.icons.rounded.Videocam
-import androidx.compose.material.icons.rounded.WbSunny
-import androidx.compose.material.icons.rounded.Wifi
-import androidx.compose.material.icons.rounded._5g
+import androidx.compose.material.icons.rounded.*
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.kyant.backdrop.Backdrop
-import com.kyant.backdrop.backdrops.rememberLayerBackdrop
 
 data class Small_Tile_Data(
 	val icon: ImageVector,

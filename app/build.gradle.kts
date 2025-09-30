@@ -38,7 +38,7 @@ android {
 
 dependencies {
 	implementation("androidx.compose.material:material-icons-extended")
-	implementation("com.github.Kyant0:AndroidLiquidGlass:1.0.0-alpha14")
+	implementation("com.github.Kyant0:AndroidLiquidGlass:1.0.0-alpha15")
 
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.lifecycle.runtime.ktx)

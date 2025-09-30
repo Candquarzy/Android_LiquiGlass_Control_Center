@@ -1,32 +1,26 @@
 package com.candy.control
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Wifi
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.candy.control.data_class.Big_Tile_Data
 import com.candy.control.unit.LiquiGlass
 import com.kyant.backdrop.Backdrop
 
 @Composable
 fun Big_Tile(
 	backdrop: Backdrop,
-	icon: ImageVector,
-	text: String,
-	padding: Dp,
+	btd: Big_Tile_Data,
+//	icon: ImageVector,
+//	text: String,
+//	padding: Dp,
 	color:Color = Color.White
 	)
 {
@@ -45,17 +39,17 @@ fun Big_Tile(
 		)
 		{
 			Icon(
-				imageVector = icon,
-				contentDescription = text,
+				imageVector = btd.icon,
+				contentDescription = btd.text,
 				tint = color,
 				modifier = Modifier.size(36.dp)
 			)
 			Text(
-				text = text,
+				text = btd.text,
 				color = color,
 				fontWeight = FontWeight.SemiBold,
 				fontSize = 16.sp,
-				modifier = Modifier.padding(start = padding)
+				modifier = Modifier.padding(start = btd.padding)
 			)
 		}
 	}
