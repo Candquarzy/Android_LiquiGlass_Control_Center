@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Control_Center</string>
+    <string name="app_name">Control Center Demo</string>
+    <string name="cellular_data">Cellular Data</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="flashlight">Flashlight</string>
+    <string name="clash">VPN</string>
+    <string name="settings">Settings</string>
 </resources>

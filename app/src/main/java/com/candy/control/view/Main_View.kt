@@ -102,7 +102,6 @@ fun Main_View()
 					horizontalArrangement = Arrangement.SpaceAround,
 					verticalArrangement = Arrangement.spacedBy(16.dp),
 					modifier = Modifier.fillMaxWidth()
-//						.padding(horizontal = 16.dp)
 				)
 				{
 					Std_List.forEachIndexed { index, data ->
