@@ -12,10 +12,18 @@ android {
 		applicationId = "com.candy.control"
 		minSdk = 31
 		targetSdk = 36
-		versionCode = 1
-		versionName = "1.0"
+		versionCode = 20250930
+		versionName = "1.0.0"
 
 		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+	}
+
+	splits{
+		abi{
+			isEnable = true
+			isUniversalApk = false
+			include("arm64-v8a")
+		}
 	}
 
 	buildTypes {
