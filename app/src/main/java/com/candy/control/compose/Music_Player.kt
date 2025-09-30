@@ -1,30 +1,24 @@
-package com.candy.control
+package com.candy.control.compose
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Airplay
-import androidx.compose.material.icons.rounded.Pause
-import androidx.compose.material.icons.rounded.SkipNext
-import androidx.compose.material.icons.rounded.SkipPrevious
+import androidx.compose.material.icons.rounded.*
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.candy.control.R
 import com.candy.control.unit.LiquiGlass
 import com.kyant.backdrop.Backdrop
 
@@ -35,13 +29,23 @@ fun Music_Player(
 {
 	LiquiGlass( //music player
 		backdrop = backdrop,
-		Rounded = 32f,
+		rounded = 32f,
 		blur = 8f,
 		size_width = 160f.dp,
 		size_height = 160f.dp,
 		modifier = Modifier.padding(start = 8.dp)
 	)
 	{
+		var music by remember { mutableStateOf(true) }
+		val icon: ImageVector = if(music)
+		{
+			Icons.Rounded.PlayArrow
+		}
+		else
+		{
+			Icons.Rounded.Pause
+		}
+
 		Column(
 			verticalArrangement = Arrangement.SpaceEvenly,
 			modifier = Modifier.fillMaxSize()
@@ -109,10 +113,13 @@ fun Music_Player(
 					modifier = Modifier.size(30.dp)
 				)
 				Icon(
-					imageVector = Icons.Rounded.Pause,
+					imageVector = icon,
 					contentDescription = "pause",
 					tint = Color.White,
 					modifier = Modifier.size(30.dp)
+						.clickable{
+							music = !music
+						}
 				)
 				Icon(
 					imageVector = Icons.Rounded.SkipNext,

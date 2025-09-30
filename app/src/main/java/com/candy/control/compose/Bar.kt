@@ -1,4 +1,4 @@
-package com.candy.control
+package com.candy.control.compose
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -16,7 +16,7 @@ fun Bar(
 {
 	LiquiGlass( //light bar
 		backdrop = backdrop,
-		Rounded = 32f,
+		rounded = 32f,
 		blur = 8f,
 		size_width = 60f.dp,
 		size_height = 160f.dp,

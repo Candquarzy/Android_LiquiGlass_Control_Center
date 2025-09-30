@@ -17,7 +17,7 @@ import com.kyant.backdrop.effects.vibrancy
 @Composable
 fun LiquiGlass(
 	backdrop: Backdrop,
-	Rounded:Float = 32f,
+	rounded:Float = 32f,
 	modifier: Modifier = Modifier,
 	blur: Float = 0f,
 	re_height: Float = 24f,
@@ -37,7 +37,7 @@ fun LiquiGlass(
 			.drawBackdrop(
 				backdrop = backdrop,
 				shape = {
-					RoundedCornerShape(Rounded)
+					RoundedCornerShape(rounded)
 				},
 				effects = {
 					vibrancy()

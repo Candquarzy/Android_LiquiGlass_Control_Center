@@ -1,4 +1,4 @@
-package com.candy.control
+package com.candy.control.compose
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -23,7 +23,7 @@ fun Small_Tile(
 		backdrop = backdrop,
 		size_width = 60.dp,
 		size_height = 60.dp,
-		Rounded = 48f,
+		rounded = 48f,
 		modifier = Modifier.animateTop()
 	)
 	{

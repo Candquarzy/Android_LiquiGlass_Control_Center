@@ -1,4 +1,4 @@
-package com.candy.control
+package com.candy.control.compose
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Icon
@@ -22,7 +22,7 @@ fun Big_Tile(
 {
 	LiquiGlass(
 		backdrop = backdrop,
-		Rounded = 64f,
+		rounded = 64f,
 		blur = 64f,
 		size_width = 160f.dp,
 		size_height = 80f.dp,

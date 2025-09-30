@@ -12,8 +12,12 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.candy.control.*
+import com.candy.control.Device_Center
 import com.candy.control.R
+import com.candy.control.compose.Bar
+import com.candy.control.compose.Big_Tile
+import com.candy.control.compose.Music_Player
+import com.candy.control.compose.Small_Tile
 import com.candy.control.data_class.Btd_List
 import com.candy.control.data_class.Std_List
 import com.kyant.backdrop.backdrops.layerBackdrop
