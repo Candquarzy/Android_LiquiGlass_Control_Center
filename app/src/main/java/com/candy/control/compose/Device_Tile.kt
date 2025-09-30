@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.candy.control.data_class.Device_Tile_Data
 import com.candy.control.unit.LiquiGlass
+import com.candy.control.unit.animateTop
 import com.kyant.backdrop.Backdrop
 
 @Composable
@@ -28,7 +29,8 @@ fun Device_Tile(
 		onDrawSurface = {
 			drawRect(Color.White.copy(alpha = 0.5f))
 		},
-		blur = 16f
+		blur = 16f,
+		modifier = Modifier.animateTop()
 	)
 	{
 		Column(

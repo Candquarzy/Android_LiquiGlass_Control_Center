@@ -36,14 +36,31 @@ fun Music_Player(
 		modifier = Modifier.padding(start = 8.dp)
 	)
 	{
-		var music by remember { mutableStateOf(true) }
-		val icon: ImageVector = if(music)
+		var play by remember { mutableStateOf(true) }
+		val icon: ImageVector = if(play)
 		{
 			Icons.Rounded.PlayArrow
 		}
 		else
 		{
 			Icons.Rounded.Pause
+		}
+		var song by remember { mutableStateOf(true) }
+		val pic: Int
+		var name: String
+		var auther: String
+
+		if(song)
+		{
+			pic = R.drawable.azalea
+			name = "Azalea"
+			auther = "米津玄師"
+		}
+		else
+		{
+			pic = R.drawable.ipad
+			name = "iPad"
+			auther = "The Chainsmokers"
 		}
 
 		Column(
@@ -57,7 +74,7 @@ fun Music_Player(
 			)
 			{
 				Image(
-					painter = painterResource(R.drawable.azalea),
+					painter = painterResource(pic),
 					contentDescription = "music pic",
 					modifier = Modifier.size(36.dp)
 						.clip(RoundedCornerShape(4.dp))
@@ -86,14 +103,14 @@ fun Music_Player(
 				)
 				{
 					Text(
-						text = "Azalea",
+						text = name,
 						color = Color.White,
 						fontWeight = FontWeight.Bold,
 						fontSize = 20.sp,
 						modifier = Modifier.padding(bottom = 4.dp)
 					)
 					Text(
-						text = "米津玄師",
+						text = auther,
 						color = Color.White,
 						fontWeight = FontWeight.SemiBold,
 						fontSize = 12.sp
@@ -111,6 +128,9 @@ fun Music_Player(
 					contentDescription = "previous",
 					tint = Color.White,
 					modifier = Modifier.size(30.dp)
+						.clickable{
+							song = !song
+						}
 				)
 				Icon(
 					imageVector = icon,
@@ -118,7 +138,7 @@ fun Music_Player(
 					tint = Color.White,
 					modifier = Modifier.size(30.dp)
 						.clickable{
-							music = !music
+							play = !play
 						}
 				)
 				Icon(
@@ -126,6 +146,9 @@ fun Music_Player(
 					contentDescription = "next",
 					tint = Color.White,
 					modifier = Modifier.size(30.dp)
+						.clickable{
+							song = !song
+						}
 				)
 			}
 		}
